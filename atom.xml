@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://huaweiouba.github.io</id>
+    <id>https://blog.sunhuawei.com</id>
     <title>sunhuawei&apos;s blog</title>
-    <updated>2020-11-19T12:37:07.289Z</updated>
+    <updated>2020-11-19T12:40:42.524Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://huaweiouba.github.io"/>
-    <link rel="self" href="https://huaweiouba.github.io/atom.xml"/>
+    <link rel="alternate" href="https://blog.sunhuawei.com"/>
+    <link rel="self" href="https://blog.sunhuawei.com/atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>https://huaweiouba.github.io/images/avatar.png</logo>
-    <icon>https://huaweiouba.github.io/favicon.ico</icon>
+    <logo>https://blog.sunhuawei.com/images/avatar.png</logo>
+    <icon>https://blog.sunhuawei.com/favicon.ico</icon>
     <rights>All rights reserved 2020, sunhuawei&apos;s blog</rights>
     <entry>
         <title type="html"><![CDATA[123]]></title>
-        <id>https://huaweiouba.github.io/post/123/</id>
-        <link href="https://huaweiouba.github.io/post/123/">
+        <id>https://blog.sunhuawei.com/post/123/</id>
+        <link href="https://blog.sunhuawei.com/post/123/">
         </link>
         <updated>2020-11-19T09:55:37.000Z</updated>
         <content type="html"><![CDATA[<p>123123123123123123</p>
@@ -21,8 +21,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[markdown示例]]></title>
-        <id>https://huaweiouba.github.io/post/markdown-shi-li/</id>
-        <link href="https://huaweiouba.github.io/post/markdown-shi-li/">
+        <id>https://blog.sunhuawei.com/post/markdown-shi-li/</id>
+        <link href="https://blog.sunhuawei.com/post/markdown-shi-li/">
         </link>
         <updated>2020-11-18T11:54:56.000Z</updated>
         <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://cdoco.com/images/markdown-syntax.png" alt="" loading="lazy"></figure>
@@ -603,16 +603,16 @@ Bob--&gt;Alice: I am good thanks!
 * [x] 看书
 </code></pre>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8871704"><label class="task-list-item-label" for="task-item-8871704"> 早起跑步</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-6783404"><label class="task-list-item-label" for="task-item-6783404"> 看书</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-286097"><label class="task-list-item-label" for="task-item-286097"> 早起跑步</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-9236222"><label class="task-list-item-label" for="task-item-9236222"> 看书</label></li>
 </ul>
 <p><strong><a href="#%E4%BB%80%E4%B9%88%E6%98%AF-markdown-">⬆ top</a></strong></p>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[记录女朋友生气的原因]]></title>
-        <id>https://huaweiouba.github.io/post/ji-lu-nu-peng-you-sheng-qi-de-li-you/</id>
-        <link href="https://huaweiouba.github.io/post/ji-lu-nu-peng-you-sheng-qi-de-li-you/">
+        <id>https://blog.sunhuawei.com/post/ji-lu-nu-peng-you-sheng-qi-de-li-you/</id>
+        <link href="https://blog.sunhuawei.com/post/ji-lu-nu-peng-you-sheng-qi-de-li-you/">
         </link>
         <updated>2020-11-18T11:35:28.000Z</updated>
         <content type="html"><![CDATA[<p>123</p>
@@ -620,8 +620,8 @@ Bob--&gt;Alice: I am good thanks!
     </entry>
     <entry>
         <title type="html"><![CDATA[想做一款游戏很久了]]></title>
-        <id>https://huaweiouba.github.io/post/xiang-zuo-yi-kuan-you-xi-hen-jiu-liao/</id>
-        <link href="https://huaweiouba.github.io/post/xiang-zuo-yi-kuan-you-xi-hen-jiu-liao/">
+        <id>https://blog.sunhuawei.com/post/xiang-zuo-yi-kuan-you-xi-hen-jiu-liao/</id>
+        <link href="https://blog.sunhuawei.com/post/xiang-zuo-yi-kuan-you-xi-hen-jiu-liao/">
         </link>
         <updated>2020-11-17T12:18:00.000Z</updated>
         <content type="html"><![CDATA[<p>【】</p>
@@ -629,8 +629,8 @@ Bob--&gt;Alice: I am good thanks!
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://huaweiouba.github.io/post/hello-gridea/</id>
-        <link href="https://huaweiouba.github.io/post/hello-gridea/">
+        <id>https://blog.sunhuawei.com/post/hello-gridea/</id>
+        <link href="https://blog.sunhuawei.com/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
