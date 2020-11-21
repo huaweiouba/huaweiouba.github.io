@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.sunhuawei.com</id>
     <title>sunhuawei&apos;s blog</title>
-    <updated>2020-11-20T12:19:58.997Z</updated>
+    <updated>2020-11-21T13:08:33.993Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.sunhuawei.com"/>
     <link rel="self" href="https://blog.sunhuawei.com/atom.xml"/>
@@ -11,16 +11,87 @@
     <icon>https://blog.sunhuawei.com/favicon.ico</icon>
     <rights>All rights reserved 2020, sunhuawei&apos;s blog</rights>
     <entry>
+        <title type="html"><![CDATA[关于mysql密码]]></title>
+        <id>https://blog.sunhuawei.com/post/guan-yu-mysql-mi-ma/</id>
+        <link href="https://blog.sunhuawei.com/post/guan-yu-mysql-mi-ma/">
+        </link>
+        <updated>2020-11-21T12:53:38.000Z</updated>
+        <summary type="html"><![CDATA[<h1 id="前言">前言</h1>
+<br/>
+<p><code>适用于忘记密码或刚安装完mysql不知道密码</code></p>
+]]></summary>
+        <content type="html"><![CDATA[<h1 id="前言">前言</h1>
+<br/>
+<p><code>适用于忘记密码或刚安装完mysql不知道密码</code></p>
+<!-- more -->
+<h2 id="场景一-安装mysql后有个初始密码">场景一： 安装MySQL后有个初始密码</h2>
+<p>1.查看初始密码</p>
+<pre><code class="language-shell"> grep &quot;A temporary password&quot; /var/log/mysqld.log
+</code></pre>
+<p>2.用初始密码登录</p>
+<pre><code class="language-shell"> mysql -u root -p
+ Enter password: 初始密码
+</code></pre>
+<p>3.修改一个复杂密码</p>
+<pre><code class="language-sql">ALTER USER &quot;root&quot;@&quot;localhost&quot; IDENTIFIED BY &quot;XXww123wwXX&quot;;
+</code></pre>
+<p>假如要修改为一个简单密码请继续看下去</p>
+<p>查看 mysql 初始的密码策略</p>
+<blockquote>
+<p>SHOW VARIABLES LIKE 'validate_password%';</p>
+</blockquote>
+<p>设置密码的验证强度等级，设置 validate_password_policy 的全局参数为 LOW 即可</p>
+<blockquote>
+<p>set global validate_password_policy=LOW;</p>
+</blockquote>
+<p>设置密码最小长度</p>
+<blockquote>
+<p>set global validate_password_length=6;</p>
+</blockquote>
+<p>修改为简单的密码</p>
+<blockquote>
+<p>ALTER USER 'root'@'localhost' IDENTIFIED BY '123456';</p>
+</blockquote>
+<h2 id="场景二-安装后忘记mysql密码">场景二： 安装后忘记MySQL密码</h2>
+<p>1.找到配置文件用vim编辑它</p>
+<pre><code class="language-shell">vim /etc/my.cnf
+</code></pre>
+<p>2.在配置文件中添加，登录跳过密码（不要添加在文件的最后面）</p>
+<pre><code class="language-shell">skip-grant-tables
+
+#设置密码安全等级为0
+validate_password_policy=0
+</code></pre>
+<p>3.重启服务</p>
+<pre><code class="language-shell">service mysqld restart
+</code></pre>
+<p>4.登录mysql选择mysql数据库</p>
+<blockquote>
+<p>mysql -u root -p<br>
+use mysql</p>
+</blockquote>
+<p>5.修改密码</p>
+<pre><code class="language-sql">update user set authentication_string=password(&quot;yourNewPassword&quot;) where User='root';
+</code></pre>
+<p>6.刷新权限</p>
+<pre><code class="language-sql">flush privileges;
+</code></pre>
+<p>7.退出，改回配置文件，重启</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[常用Markdown语法]]></title>
         <id>https://blog.sunhuawei.com/post/chang-yong-markdown-yu-fa/</id>
         <link href="https://blog.sunhuawei.com/post/chang-yong-markdown-yu-fa/">
         </link>
         <updated>2020-11-20T09:54:04.000Z</updated>
         <summary type="html"><![CDATA[<h1 id="前言">前言</h1>
-<p>长时间不写markdown会忘记语法，在此记录下常用语法，以供写博客时翻阅</p>
+<br/>
+<p><code>长时间不写markdown会忘记语法，在此记录下常用语法，以供写博客时翻阅</code></p>
 ]]></summary>
         <content type="html"><![CDATA[<h1 id="前言">前言</h1>
-<p>长时间不写markdown会忘记语法，在此记录下常用语法，以供写博客时翻阅</p>
+<br/>
+<p><code>长时间不写markdown会忘记语法，在此记录下常用语法，以供写博客时翻阅</code></p>
 <!-- more -->
 <hr>
 <h2 id="代码引用">代码&amp;&amp;引用</h2>
@@ -40,7 +111,7 @@
 <pre><code>- 无序
 - 无序
 1. 有序
-1. 有序
+2. 有序
 - [ ] 任务列表
 - [x] 任务列表
 </code></pre>
@@ -53,8 +124,8 @@
 <li>有序</li>
 </ol>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9534032"><label class="task-list-item-label" for="task-item-9534032"> 任务列表1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5139027"><label class="task-list-item-label" for="task-item-5139027"> 任务列表2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9211114"><label class="task-list-item-label" for="task-item-9211114"> 任务列表1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1597152"><label class="task-list-item-label" for="task-item-1597152"> 任务列表2</label></li>
 </ul>
 <h2 id="字体就叫字体吧">字体（就叫字体吧）</h2>
 <pre><code>*我变斜恶了😈🤣*
@@ -146,17 +217,26 @@
         <link href="https://blog.sunhuawei.com/post/ji-lu-nu-peng-you-sheng-qi-de-li-you/">
         </link>
         <updated>2020-11-18T11:35:28.000Z</updated>
-        <summary type="html"><![CDATA[<p><code>记此笔记不是为了记仇，是为了总结过去实现不再惹她生气😘</code></p>
+        <summary type="html"><![CDATA[<h1 id="前言">前言</h1>
+<br/>
+<p><code>记此笔记不是为了记仇，是为了总结过去实现不再惹她生气😘</code></p>
 ]]></summary>
-        <content type="html"><![CDATA[<p><code>记此笔记不是为了记仇，是为了总结过去实现不再惹她生气😘</code></p>
+        <content type="html"><![CDATA[<h1 id="前言">前言</h1>
+<br/>
+<p><code>记此笔记不是为了记仇，是为了总结过去实现不再惹她生气😘</code></p>
 <!-- more -->
 <p><code>严重级别分1-10级，1级稍微生气，10级差点分手</code></p>
 <hr>
-<pre><code>1. 2020/11/14 她鞋子坏了让我在小区门口等她，背她回家，结果我去丢垃圾差50m没接到她
-生气时长：1晚，和解方式：自己消气 严重级别：4
+<pre><code>1. 2020/11/14 晚 她鞋子坏了让我在小区门口等她，背她回家，结果我去丢垃圾差50m没接到她
+生气时长：一晚
+严重级别：4
+和解方式：自己消气 
 
-2. 2020/11/20 在地铁上我碍于面子没有跟别人换位置占她身边（考虑到只剩2站），回家路上一直烦她（碎嘴），为了报复她跟我生气撕了她的背诵任务（第二天要检查）
-生气时长：目前是第二天晚上，还没和好，和解方式：主动认错 严重级别：10
+2. 2020/11/19 晚 在地铁上我碍于面子没有跟别人换位置占她身边（考虑到只剩2站），回家路上一直烦她（碎嘴），为了报复她跟我生气撕了她的背诵任务（第二天要检查）
+生气时长：一晚一白
+严重级别：10
+和解方式：主动认错，并答应修复她的文稿（拼接不好后用ocr识别文字，手动修订细节，打印机打出）
+总结：再也不碎嘴了，另外要加强对她理性相关知识的输入，任何时候都要保持冷静
 </code></pre>
 ]]></content>
     </entry>
@@ -166,10 +246,15 @@
         <link href="https://blog.sunhuawei.com/post/xiang-zuo-yi-kuan-you-xi-hen-jiu-liao/">
         </link>
         <updated>2020-11-17T12:18:00.000Z</updated>
-        <summary type="html"><![CDATA[<p><code>我想做一款自己设计，自己运营，自己开发的游戏社区</code></p>
+        <summary type="html"><![CDATA[<h1 id="前言">前言</h1>
+<br/>
+<p><code>想做一款自己设计，自己运营，自己开发的游戏社区。规则自己定，可玩性、平衡性永远第一</code></p>
 ]]></summary>
-        <content type="html"><![CDATA[<p><code>我想做一款自己设计，自己运营，自己开发的游戏社区</code></p>
+        <content type="html"><![CDATA[<h1 id="前言">前言</h1>
+<br/>
+<p><code>想做一款自己设计，自己运营，自己开发的游戏社区。规则自己定，可玩性、平衡性永远第一</code></p>
 <!-- more -->
+<hr>
 <h1 id="初次接触游戏">初次接触游戏</h1>
 <p>回想起第一次接触网游是一款酷似地下城的游戏，有着丰富的社交，人物，剧情，boss及挂机功能，运行在塞班系统中，从小学玩到初中。中途安卓机崛起，我反其道而行之买了一个二手诺基亚，同学们都笑我。我不以为然，因为游戏里有我的朋友，有人送我装备，带我组队打副本，从小学便认识。后来初三班主任突击搜查寝室（我们在班里上课），从我的枕头底下翻出来我的小诺基亚，并当着全班的面砸了它（其他都是安卓机，挑了其中最便宜的），我便跟游戏中的老朋友们断了联系。😭</p>
 <h1 id="重拾游戏">重拾游戏</h1>
